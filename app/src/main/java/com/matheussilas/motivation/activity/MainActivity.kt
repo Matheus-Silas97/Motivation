@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         imgAll.setOnClickListener(this)
         imgHappy.setOnClickListener(this)
         imgMorning.setOnClickListener(this)
+        edit_img.setOnClickListener(this)
 
 
     }
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             handleNewPhrase()
         } else if (id in listFilter) {
             handleFilter(id)
+        } else if (id == R.id.edit_img) {
+            startActivity(Intent(this, NewNameActivity::class.java))
         }
     }
 
@@ -77,7 +80,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 mPhraseFilter = MotivationConstants.PHRASEFILTER.MORNING
             }
         }
-
     }
-
 }
